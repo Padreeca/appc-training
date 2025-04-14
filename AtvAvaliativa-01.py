@@ -1,3 +1,5 @@
+#neste exercício não pode-se usar bibliotecas externas sem ser a random, arrays, manipular strings, etc.
+
 import random
 
 
@@ -35,14 +37,14 @@ while jogando != 0:
                 par_impar_maior_menor = random.randint(1,2)
                 if n_dica==1 and not pc1:     #se random ==1
                     if par_impar_maior_menor == 1:
-                        if p1%2==0:
+                        if n1%2==0:
                             print("Primeira posição é par")
                             dica = 1
                         else:
                             print("Primeira posição é ímpar")
                             dica = 1
                     else:
-                        if pc1<5:
+                        if n1<5:
                             print("Primeira posição menor que 5")
                             dica = 1
                         else:
@@ -51,14 +53,14 @@ while jogando != 0:
 
                 if n_dica==2 and not pc2:     #se random ==2
                     if par_impar_maior_menor == 1:
-                        if pc2%2==0:
+                        if n2%2==0:
                             print("Segunda posição é par")
                             dica = 1
                         else:
                             print("Segunda posição é ímpar")
                             dica = 1
                     else:
-                        if pc2<5:
+                        if n2<5:
                             print("Segunda posição menor que 5")
                             dica = 1
                         else:
@@ -67,14 +69,14 @@ while jogando != 0:
 
                 if n_dica==3 and not pc3:     #se random ==3
                     if par_impar_maior_menor == 1:
-                        if pc3%2==0:
+                        if n3%2==0:
                             print("Terceira posição é par")
                             dica = 1
                         else:
                             print("Teceira posição é ímpar")
                             dica = 1
                     else:
-                        if pc3<5:
+                        if n3<5:
                             print("Terceira posição menor que 5")
                             dica = 1
                         else:
@@ -83,14 +85,14 @@ while jogando != 0:
 
                 if n_dica==4 and not pc4:     #se random ==4
                     if par_impar_maior_menor == 1:
-                        if pc4%2==0:
+                        if n4%2==0:
                             print("Quarta posição é par")
                             dica = 1
                         else:
                             print("Quarta posição é ímpar")
                             dica = 1
                     else:
-                        if pc4<5:
+                        if n4<5:
                             print("Quarta posição menor que 5")
                             dica = 1
                         else:
@@ -103,8 +105,21 @@ while jogando != 0:
         pc3=False
         pc4=False
 
-        palpite = int(input("\nDigite seu palpite: "))
-        print("")
+
+        palpite = 0
+        input_ok = 0
+        while input_ok == 0:
+            try:                                                    ### não sei se pode usar try catch
+                palpite = int(input("\nDigite seu palpite: "))
+                if (palpite>=1000) and (palpite<=9999):
+                    print("")
+                    input_ok = 1
+                else:
+                    print("\n-------------------------------------")
+                    print("\nDigite um numero entre 1000 e 9999")
+            except:
+                print("Digite apenas números")
+
 
         p1 = palpite/1000
         p1 = int(p1)
@@ -112,7 +127,7 @@ while jogando != 0:
         if p1 == n1:
             pc1 = True    #posição correta do 1
         elif p1 == n2 or p1 == n3 or p1 == n4:
-            pe += 1
+            pe += 1       #posição errada +1
 
         p2 = (palpite%1000)/100
         p2 = int(p2)
