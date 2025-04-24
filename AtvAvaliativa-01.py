@@ -6,22 +6,22 @@ import random
 jogando = 1
 while jogando != 0:
     secreto = random.randint(1000,9999)     #biblioteca .random
-    print(secreto)
+    # print(secreto)   #printar codigo
 
     n1 = secreto/1000  #daria p usar // para pegar só o inteiro
     n1=int(n1)
-    print(n1)
+    # print(n1)      
 
     n2 = (secreto%1000)/100
     n2 = int(n2)
-    print(n2)
+    # print(n2)       
 
     n3 = (secreto%100)/10
     n3 = int(n3)
-    print(n3)
+    # print(n3)
 
     n4 = (secreto%10)
-    print(n4)
+    # print(n4)
 
     palpite = 0
     count = 0
