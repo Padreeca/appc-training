@@ -1,216 +1,147 @@
-# 1. Efetue a transformação de binário para decimal ou vice-
-# versa
-
-# a) 33
-00100001
-
-# b) 18
-00010010
-
-# c) 5
-00000101
-
-# d) 24
-00011000
-
-# e) 00000110
-6
-
-# f) 01100100
-100
-
-# g) 00011001
-25
-
-# h) 00000010
-2
+# 1. Elabore um programa que leia um número inteiro e imprima se ele
+# é par ou ímpar
+num = int(input("Digite um número: "))
+if num % 2 == 0:
+    print("O número é par")
+else:
+    print("O número é ímpar")
 
 # ----------------------------------------------------------------------
 
-# 2. Faça o teste de mesa para os seguintes trechos de programas
-# a) x = 36 / 4 * (3 + 2) * 4 + 2
+# 2. Construa um programa que leia os lados de um quadrilátero e
+# determine se é um Quadrado ou um Retângulo
+lado1 = float(input("Digite o primeiro lado: "))
+lado2 = float(input("Digite o segundo lado: "))
+lado3 = float(input("Digite o terceiro lado: "))
+lado4 = float(input("Digite o quarto lado: "))
 
-36/4 = 9.0
-(3 + 2) = 5
-9.0 *5
-45.0*4 = 180.0
-180.0 +2 = 182.0
-
-x= 182.0
-
-# ----------------------------------------------------------------------
-
-# b)
-# valueOne = 5 ** 2
-# valueTwo = 5 ** 3
-
-valueOne = 25
-valueTwo = 125
+if lado1 == lado2 == lado3 == lado4:
+    print("É um Quadrado")
+else:
+    print("É um Retângulo")
 
 # ----------------------------------------------------------------------
 
-# c)
-# x = 7
-# y = 5
-# a = y // x
-# b = x % y
-# x = x + a
-# y = y - b
+# 3. Faça um Programa que peça dois números e imprima o maior deles
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
 
-# print(a, b, x, y)
-
-# 5 // 7 = 0
-# 7 % 5 = 2
-# 7 + 0 = 7
-# 5 - 2 = 3
-
-a= 0
-b= 2
-x= 7
-y= 3
+if num1 > num2:
+    print("O maior número é:", num1)
+else:
+    print("O maior número é:", num2)
 
 # ----------------------------------------------------------------------
 
-# 3. Sabendo que A=5, B=4 e C=3 e D=6, informe se as
-# expressões abaixo são Verdadeiras ou Falsas.
-# a) (A > C) and (C <= D)
-True
+# 4. Faça um Programa que peça um valor e mostre na tela se o valor é
+# positivo, negativo ou nulo
+valor = float(input("Digite um valor: "))
 
-# b) (A+B) > 10 or (A+B) == (C+D)
-True
-
-# c) (A>=C) and (D >= C)
-True
-
-# ----------------------------------------------------------------------
-
-# 4. Sabendo que A=20, B=0, C=1 e D=10, informe se as
-# expressões são Verdadeiras ou Falsas.
-
-# a) (A – B + D) >= C
-True
-
-# b) (A > (A + D)) or (C > B)
-True
-
-# c) ((A * D) > (C + A)) and (A > B)
-True
-
-# d) (((A + B) / C) >= 0,9) and ((B * D) < 0)
-False
-
-# e) ((( A + C)/D) > 0,3) and(((B –C)<0) ) or ((C+A) > D)
-True
-
-# f) ((( A + C)/D) > 0,3) and (((B –C)<0) or ((C+A) > D))
-True
+if valor > 0:
+    print("O valor é positivo")
+elif valor < 0:
+    print("O valor é negativo")
+else:
+    print("O valor é nulo")
 
 # ----------------------------------------------------------------------
 
-# 5. Suponha que o valor de uma certa variável inteira A=5 e de
-# uma Variável B=13, como poderíamos trocar o valor dessas
-# variáveis, ou seja, A=13 e B=5?
+# 5. Crie um algoritmo que receba do usuário um número qualquer e
+# verifique se esse é múltiplo de 5
+num = int(input("Digite um número: "))
 
-A=13
-B=5
-
-c = A
-A = B
-B = c
+if num % 5 == 0:
+    print("O número é múltiplo de 5")
+else:
+    print("O número não é múltiplo de 5")
 
 # ----------------------------------------------------------------------
 
-# 6. Faça um programa para receber um número inteiro
-# representando segundos e imprimir a quantidade
-# correspondente em horas, minutos e segundos.
+# 6. Construir um programa que faz a leitura de dois valores inteiros A e
+# B. Se os valores forem iguais deverá somar os dois, caso contrário
+# multiplique A por B. Ao final de qualquer um dos cálculos deve-se
+# atribuir o resultado para uma variável C e mostrar seu conteúdo na
+# tela
+A = int(input("Digite o valor A: "))
+B = int(input("Digite o valor B: "))
 
-segundos_total = int(input("Digite o total de segundos: "))
+if A == B:
+    C = A + B
+else:
+    C = A * B
 
-horas = int(segundos_total / 3600)
-minutos = int((segundos_total % 3600) / 60)
-segundos = int((segundos_total % 3600) % 60)
-
-print("Horas:", horas)
-print("Minutos:", minutos)
-print("Segundos:", segundos)
+print("Resultado C:", C)
 
 # ----------------------------------------------------------------------
 
-# 7. Construir um programa que leia o salário mensal atual de
-# um funcionário e o percentual de reajuste. Determine o
-# valor do novo salário e imprima os valores lidos e o novo
-# salário.
+# 1. Um funcionário irá receber um aumento de acordo com o seu
+# plano de trabalho, de acordo com a tabela:
+# Plano 1 = 10%, Plano 2 = 15%, Plano 3 = 20%
+# Faça um programa que leia o plano de trabalho e o salário atual de
+# um funcionário e calcula e imprime o seu novo salário
+plano = int(input("Digite o plano de trabalho (1, 2 ou 3): "))
+salario = float(input("Digite o salário atual: R$"))
 
-salario_atual = float(input("Digite o salário atual: R$"))
-percentual = float(input("Digite o percentual de reajuste: %"))
+if plano == 1:
+    novo_salario = salario + (salario * 0.10)
+elif plano == 2:
+    novo_salario = salario + (salario * 0.15)
+elif plano == 3:
+    novo_salario = salario + (salario * 0.20)
 
-novo_salario = salario_atual * (1 + (percentual/100))
-
-print("Salário atual: R$", salario_atual)
-print("Percentual de reajuste: %", percentual)
 print("Novo salário: R$", novo_salario)
 
 # ----------------------------------------------------------------------
 
-# 8. A loja “FiqueFeliz” resolveu liquidar todos os seus
-# produtos, para isso necessita de um programa que ajude
-# calcular os novos preços desses produtos. Elabore um
-# programa que leia o preço de um produto, o valor do
-# desconto (em porcentagem) e calcule o novo preço.
-# Imprimir o valor do produto, o desconto e o novo valor.
+# 2. Escreva um programa que calcule x elevado a n. Considere que n é um
+# valor inteiro não negativo. PROIBIDO USAR QUALQUER FUNÇÃO
+# MATEMATICA EXISTENTE no PYTHON, incluindo **
+x = int(input("Digite o valor de x: "))
+n = int(input("Digite o valor de n: "))
 
-preco_produto = float(input("Digite o preço do produto: R$"))
-percentual_desconto = float(input("Digite o percentual de desconto: %"))
+resultado = 1
+contador = 0
 
-valor_desconto = preco_produto * (percentual_desconto/100)
-novo_preco = preco_produto - valor_desconto
+while contador < n:
+    resultado = resultado * x
+    contador = contador + 1
 
-print("Valor do produto: R$", preco_produto)
-print("Valor do desconto: R$", valor_desconto)
-print("Novo valor: R$", novo_preco)
+print("Resultado:", resultado)
 
 # ----------------------------------------------------------------------
 
-# 9. Escrever um programa que faz a leitura de um número
-# inteiro de até 2 dígitos e imprima a soma dos dígitos.
-# Considere que somente serão digitados números de 1 ou 2
-# dígitos
+# 3. Faça um programa que imprima os números inteiros de 100 a
+# 450, que são múltiplos de 7
+print("Múltiplos de 7 entre 100 e 450:")
+num = 100
 
-numero = int(input("Digite um número de até 2 dígitos: "))
-
-if numero < 10:
-    soma = numero
-else:
-    dezena = int(numero / 10)
-    unidade = numero % 10
-    soma = dezena + unidade
-
-print("Soma dos dígitos: ", soma)
+while num <= 450:
+    if num % 7 == 0:
+        print(num)
+    num = num + 1
 
 # ----------------------------------------------------------------------
 
-# 10. Uma empresa paga a seus empregados um salário de R$1.500,00 por mês
-# mais uma comissão de R$200,00 para cada carro vendido e mais 5% do
-# valor da venda. Construir um programa para calcular o salário do mês de
-# um funcionário, de acordo com o descrito acima. Para o cálculo da
-# comissão e do adicional de 5% do valor da venda, o programa deverá ler o
-# número de carros vendidos e valor total das vendas, do empregado, no mês
-# e, imprimir de forma bem explicativa o salário do funcionário:
+# 4. Escreva um algoritmo que leia n de números inseridos pelo
+# usuário (n é fornecido pelo usuário) e realize a soma dos números
+# pares e conta quantos impares o usuário digitou. O resultado da
+# soma dos pares e o número de ímpares digitados deverá ser
+# impresso no final
+n = int(input("Quantos números você vai digitar? "))
 
-salario_base = 1500.00
-comissao_por_carro = 200.00
-adicional_vendas = 0.05
+soma_pares = 0
+conta_impares = 0
+contador = 0
 
-carros_vendidos = int(input("Número de carros vendidos: "))
-valor_total_vendas = float(input("Valor total das vendas: R$ "))
+while contador < n:
+    num = int(input("Digite um número: "))
+    
+    if num % 2 == 0:
+        soma_pares = soma_pares + num
+    else:
+        conta_impares = conta_impares + 1
+    
+    contador = contador + 1
 
-total_comissao = carros_vendidos * comissao_por_carro
-total_adicional = valor_total_vendas * adicional_vendas
-salario_final = salario_base + total_comissao + total_adicional
-
-print("\n• Salário Base: R$ 1500.00")
-print("• Número de Carros Vendidos:", carros_vendidos)
-print("• Total de Vendas: R$", valor_total_vendas)
-print("• Total de Comissão: R$", total_comissao)
-print("• Total de Adicional de 5%: R$", total_adicional)
-print("• Salario a RECEBER: R$", salario_final)
+print("Soma dos números pares:", soma_pares)
+print("Quantidade de números ímpares:", conta_impares)

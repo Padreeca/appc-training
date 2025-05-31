@@ -1,115 +1,97 @@
-# 1. Qual a saída dos seguintes códigos?
+# 1. Faça um programa que solicite o nome do usuário e
+# imprima-o na vertical
+nome = input("Digite seu nome: ")
 
-# a) 
-
-# x = 0
-# a = 5
-# b = 5
-# if a > 0:
-#     if b < 0:
-#         x = x + 5
-#     elif a > 5:
-#         x = x + 4
-#     else:
-#         x = x + 3
-# else:
-#     x = x + 2
-# print(x)
-
-saida = 3
+for letra in nome:
+    print(letra)
 
 # ----------------------------------------------------------------------
 
-# b)
+# 2. Faça um programa que leia um nome e imprima as 4
+# primeiras letras do nome
+nome = input("Digite um nome: ")
 
-# x = 0
-# a = 0
-# b = -5
-# if a > 0:
-#     if b < 0:
-#         x = x + 5
-#     elif a > 5:
-#         x = x + 4
-#     else:
-#         x = x + 3
-# else:
-#     x = x + 2
-# print(x)
+contador = 0
+resultado = ""
+for letra in nome:
+    if contador < 4:
+        resultado = resultado + letra
+        contador = contador + 1
 
-saida = 2
+print(resultado)
 
 # ----------------------------------------------------------------------
 
-# 3. Faça um Programa que peça um valor e mostre na tela se o
-# valor é positivo, negativo ou nulo.
+# 3. Elabore um programa que leia nome, sexo e idade de um
+# usuário. Se sexo for feminino e idade menor que 25,
+# imprime o nome da pessoa e a palavra "ACEITA", caso
+# contrário imprimir "NÃO ACEITA"
+nome = input("Digite o nome: ")
+sexo = input("Digite o sexo (F/M): ")
+idade = int(input("Digite a idade: "))
 
-valor = float(input("Digite um valor: "))
-
-if valor > 0:
-    print("O valor é positivo")
-elif valor < 0:
-    print("O valor é negativo")
+if sexo == "F" and idade < 25:
+    print(nome, "ACEITA")
 else:
-    print("O valor é nulo")
+    print("NÃO ACEITA")
 
 # ----------------------------------------------------------------------
 
-# 4. Elabora um programa que ao receber um número inteiro
-# determine retorne se o mesmo é par ou ímpar.
+# 4. Construa um programa que leia duas strings fornecidas pelo
+# usuário e verifique se a segunda string lida está contida no
+# final da primeira, imprimindo o resultado da verificação
+string1 = input("Digite a primeira string: ")
+string2 = input("Digite a segunda string: ")
 
-numero = int(input("Digite um número inteiro: "))
-
-if numero % 2 == 0:
-    print("O número é par")
+if string1.endswith(string2):
+    print("A segunda string está no final da primeira")
 else:
-    print("O número é ímpar")
+    print("A segunda string não está no final da primeira")
 
 # ----------------------------------------------------------------------
 
-# 5. Faça um Programa que peça três números e imprima o maior
-# deles.
+# 5. Escreva um programa que leia a idade e o primeiro nome de
+# várias pessoas. Seu programa deve terminar quando uma
+# idade negativa for digitada. Ao terminar, seu programa deve
+# escrever o nome e a idade da pessoa mais jovem e mais
+# velha
+nome_jovem = ""
+idade_jovem = 999
+nome_velha = ""
+idade_velha = 0
 
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-num3 = float(input("Digite o terceiro número: "))
+while True:
+    idade = int(input("Digite a idade: "))
+    if idade < 0:
+        break
+    
+    nome = input("Digite o nome: ")
+    
+    if idade < idade_jovem:
+        idade_jovem = idade
+        nome_jovem = nome
+    
+    if idade > idade_velha:
+        idade_velha = idade
+        nome_velha = nome
 
-if num1 >= num2 and num1 >= num3:
-    maior = num1
-elif num2 >= num1 and num2 >= num3:
-    maior = num2
-else:
-    maior = num3
-
-print("O maior número é:", maior)
+print("Pessoa mais jovem:", nome_jovem, "com", idade_jovem, "anos")
+print("Pessoa mais velha:", nome_velha, "com", idade_velha, "anos")
 
 # ----------------------------------------------------------------------
 
-# 6. Desenvolver um algoritmo que leia um número inteiro e
-# verifique se o número é divisível por 5 e por 3 ao mesmo
-# tempo.
+# 6. Faça um programa que, dada uma string, diga se ela e um
+# palíndromo ou não. Lembrando que um palíndromo e uma
+# palavra que tenha a propriedade de poder ser lida tanto da
+# direita para a esquerda como da esquerda para a direita
+texto = input("Digite uma palavra ou frase: ")
+texto = texto.lower().replace(" ", "")
 
-numero = int(input("Digite um número inteiro: "))
+texto_invertido = ""
+for letra in texto:
+    texto_invertido = letra + texto_invertido
 
-if numero % 5 == 0 and numero % 3 == 0:
-    print("O número é divisível por 5 e por 3 ao mesmo tempo")
+if texto == texto_invertido:
+    print("É um palíndromo")
 else:
-    print("O número NÃO é divisível por 5 e por 3 ao mesmo tempo")
-
-# ----------------------------------------------------------------------
-
-# 7. Desenvolver um algoritmo para ler um número “x” e calcular
-# e imprimir o valor de “y” de acordo com as condições abaixo:
-# • y = x , se x < 1;
-# • y = 0 , se x = 1;
-# • y = x² , se x > 1;  
-
-x = float(input("Digite o valor de x: "))
-
-if x < 1:
-    y = x
-elif x == 1:
-    y = 0
-else:
-    y = x**2
-
-print("O valor de y é:", y)
+    print("Não é um palíndromo")
